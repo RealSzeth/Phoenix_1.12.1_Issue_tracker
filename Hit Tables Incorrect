@@ -1,0 +1,76 @@
+Hopefully, with the following information (and the screenshots to follow which I will post later) we can correct the hit tables for melee on Feenix.
+
+
+Alright, first of all people gotta know how the miss chance is calculated. A major problem you run into when looking for sources is that people often only talk about miss against level 60 or miss when dual wielding and that kinda stuff so in order to be able to use those, people need to stop being retarded first.
+
+Miss chance = 5% + (Target_Defense_Skill-Attacker_Weapon_skill)*0.04%
+Another 19% miss are added when dual wielding - those do not apply to special attacks.
+Another thing that is required to understand all this: stuff in raids is considered to be Level 63 for all practical purposes. Since NPCs have 5*Level for both their weapon skill and defense skill, the Target_Defense_Skill you see in the formula will be 315 when attacking a boss.
+
+Now here's the fancy part: the actual sources with a few notes
+
+http://www.wowwiki.com/Attack_table?oldid=349774
+In example 2, Elliot the dual wielding rogue with 305 weapon skill and +0% hit is attacking a boss. In the shown attack table, Elliot's chance to miss is 24.4% for his white hits and 5.4% when it comes to Backstabs. If we plug the stat setup into the aforementioned formulas, we get
+5%+(315-305)*0.04%+19%=24.4% for Elliot's white hits and
+5%+(315-305)*0.04%=5.4% for Elliot's special attacks.
+
+http://elitistjerks.com/f15/t7308-dual_wielding_lifestealting_vs_crusader/
+In post 5, Mem says the following:
+"Therefore the MH does hit more often, especially since styles do only miss for 5 % against Level 60 targets."
+By "styles" he means special attacks. The mentioned formula for the miss chance for single wielding works again in this situation:
+5%+(300-300)*0.04%=5%. Works out.
+
+http://leftoversraiding.org/index.php/topic/839/1/glancing-blows-and-you.html
+While this post is mainly about glancing blows, the author mentions the values of an attack table a single wielding player with 300 weapon skill and 0% +hit would have when attacking a boss from the front.
+"If you're tanking a level 63 boss, the following events can occur: 40% glancing blows, 5.6% dodge, 5.6% parry, 5.6% block, and 5.6% miss"
+Applying the single wield miss formula:
+5%+(315-300)*0.04%=5.6%. Works out.
+
+http://www.wowwiki.com/Weapon_skill?oldid=349298
+"With no +skill/+hit gear on, attacks made by a dual wielder against a level 63 mob will have the following table from the front"..."24.6% Miss"
+Applying the dual wield miss formula:
+5%+(315-300)*0.04%+19%=24.6%. Works out.
+
+http://elitistjerks.com/f15/t6291-not_another_rogue_thread_glancing_blows/p5/
+"Data is from Ebonroc/Flamegor/3x DeathTalon Wyrmguards (or whatever the lvl 63 ones are)/Chromaggus tonight, so, all level 63s. 304 sword skill (gnome, Maladath.)
+
+1311 swings
+544 glancing (41.5% glancing)
+339 crits (25.8% crit)
+153 non-crit white hits
+189 misses (14.4% miss)
+80 dodge (6.1%)
+6 parry (negligible)
+
++hit gear varied according to need (FR, mostly), average of 10% +hit."
+304 weapon skill, about 10% hit, attacking a boss. Appyling the dual wield formula on this example, we get:
+5%+(315-304)*0.04%-19%+10%=14.44%. The player observed 14.416% misses - considering we only have a sample size of 1311 swings, a slight aberration is to be expected.
+
+http://elitistjerks.com/f15/t6291-not_another_rogue_thread_glancing_blows/p9/
+Some folks are theorycrafting some maximum crit on white hit build here. deric writes down an attack table assuming +12% hit (and most likely no +skill).
+"Crit: 41.8%
+Hit: 0%
+Glancing: 40%
+Miss: 12.6%
+Dodge: 5.6%"
+Time for the dual wield miss formula to shine:
+5%+(315-300)*0.04%+19%-12%=12.6%. Works out.
+
+web.archive.org/web/20060516141644/http://forums.worldofwarcraft.com/thread.aspx?FN=wow-warrior&T=942763
+"With no +skill/+hit gear on, a dual wielder vs a level 63 mob will have the following damage table from the front: 5.6% dodge, 5.6% parry, 24.6% miss, 5.6% block, 40% glancing blow, 18.6% combined hit + crit. Attacking from the front prevents dodge and block giving 29.8% combined hit + crit."
+"For 2hers it is not as bad.
+You have 5.6% miss, 5.6% dodge, 5.6% parry, 5.6% block, 40% glancing, 37.6 hit/crit. This is a 37.6 + your +hit crit cap from the front, 48.8% from the back "
+Two quotes from the same thread, one for dual wielding and one for single wielding (using a two handed weapon does not influence your chance to miss).
+Using the formulas yet again:
+5%+(315-300)*0.04%+19%=24.6% for the dual wield scenario,
+5%+(315-300)*0.04%=5.6% foe the single wield scenario.
+
+http://elitistjerks.com/f15/t7220-skill_ranged_you/
+Pretty straightforward right here:
+"For melee, chance to miss against a boss would thus be 5.6% (5 Defense gained per level)."
+I don't even feel like making use of the formulas anymore.
+
+
+If this information is insufficient, or you have reason to believe (preferably with counter evidence) as to why the above information is incorrect, let me know.
+
+Screenshots showing a rogue at 8% hit including 5% hit talents missing special attacks to follow. 
